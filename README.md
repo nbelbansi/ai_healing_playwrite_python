@@ -1,11 +1,15 @@
 🤖 AI-Augmented Quality Engineering Framework
+
 Playwright + Python + Groq (Llama 3.3)
+
 🎯 The Vision: The "Quality Operating System"
+
 Traditional test automation is brittle. A simple UI change (like a developer changing a data-test ID) can break an entire CI/CD pipeline, leading to "maintenance fatigue."
 
 This framework implements a Self-Healing mechanism. When a selector fails, the system doesn't just crash. It captures the current DOM, consults a Llama 3.3 (70B) model via Groq, and dynamically finds the new element to keep the test running.
 
 🚀 Key Features
+
 Self-Healing Locators: Automatic recovery from TimeoutError using AI-driven element discovery.
 
 Principal Architect Pattern: Uses a robust BasePage inheritance model for reusable healing logic across all Page Objects (POM).
@@ -17,6 +21,7 @@ Evidence Capturing: Automatically saves screenshots of "Healed" elements in a he
 Enterprise Reporting: Integrated with pytest-html to provide a dashboard of test results, including AI-intervention logs.
 
 🛠️ Tech Stack
+
 Language: Python 3.12+
 
 Browser Automation: Playwright (Sync API)
@@ -28,6 +33,7 @@ Reporting: Pytest-HTML
 Environment Management: Python-Dotenv
 
 📦 Installation & Setup
+
 Clone the repository:
 
 Bash
@@ -65,6 +71,7 @@ Run the test.
 Watch the console: The framework will detect the failure, call the AI, find the correct button, and pass the test.
 
 📊 Architecture
+
 Plaintext
 ├── pages/
 │   ├── BasePage.py       # Core healing & screenshot logic
@@ -79,6 +86,7 @@ Plaintext
 └── .env                  # (Git Ignored) API Secrets
 
 👔 Professional Summary
+
 This project is part of a larger initiative to build an Enterprise Quality Operating System. By reducing flakiness through AI, we allow engineering teams to focus on shipping features rather than fixing selectors.
 
 Author: Neelesh Belbansi
