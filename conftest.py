@@ -1,7 +1,9 @@
 import pytest
+import logging
 from playwright.sync_api import Browser
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
+logger = logging.getLogger(__name__)
 
 # --- Existing Fixtures ---
 @pytest.fixture(scope="function")
@@ -10,8 +12,13 @@ def browser_context(browser: Browser):
     yield context
     context.close()
 
-# --- Updated Reporting Hooks for pytest-html 4.0+ ---
-
+def pytest_configure(config):
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        datefmt="%H:%M:%S"
+    )
+    
 def pytest_html_report_title(report):
     """Sets the title for the HTML report (New Version Syntax)."""
     report.title = "AI-Augmented Quality Engineering Report"

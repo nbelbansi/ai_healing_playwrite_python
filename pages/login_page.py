@@ -3,8 +3,9 @@ from .BasePage import BasePage
 class LoginPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
+        # self.user_field = "[data-test='username']"
         # We intentionally use a 'broken' selector to test healing
-        self.user_field = "[data-test='username-WRONG']"
+        self.user_field = "[data-test='WRONG']"
         self.pass_field = "[data-test='password']"
         self.login_btn = "[data-test='login-button']"
 
